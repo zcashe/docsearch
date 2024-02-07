@@ -20,5 +20,12 @@ public class TestDocSearch {
     String expect = String.format("Found 2 paths:\n.%stechnical%sbiomed%sar615.txt\n.%stechnical%splos%sjournal.pbio.0020150.txt", sep, sep, sep, sep, sep, sep);
     assertEquals(expect, h.handleRequest(rootPath));
 	}
+    @Test
+    public void testSearch2() throws URISyntaxException, IOException {
+        Handler h = new Handler("./technical/");
+        String sep = File.separator;
+        URI rootPath = new URI("http://localhost/search?q=Resonance");
+        String expect = String.format("Found 2 paths:\n.%stechnical%sbiomed%sar615.txt\n.%stechnical%splos%sjournal.pbio.0020150.txt", sep, sep, sep, sep, sep, sep);
+        assertEquals(expect, h.handleRequest(rootPath));
 }
 
