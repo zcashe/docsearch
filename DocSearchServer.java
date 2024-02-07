@@ -65,8 +65,8 @@ class Handler implements URLHandler {
 
 class DocSearchServer {
     public static void main(String[] args) throws IOException {
-        if(args.length == 0){
-            System.out.println("Missing port number! Try any number between 1024 to 49151");
+        if(args.length <2){
+            System.out.println("Missing port number or directory! The first argument should be the port number (Try any number between 1024 to 49151) and the second argument should be the path of the directory");
             return;
         }
 
